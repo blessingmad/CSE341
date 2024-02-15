@@ -12,23 +12,25 @@ content-type: application/json
 
 
 {
-    "firstName": "Tapiwar",
-    "lastName": "sithole",
-    "email": "dbra@education.co.za",
-    "favoriteColor": "Yellow",
-    "birthday": "Feb 19 2002"
+    "brandName": "Nissan",
+    "ownerEmail": "nissan@co.za",
+    "model": "2019",
+    "location": "Cape Town",
+    "milage": "1200"
 }
+
+
 
 ### put cars
 POST http://localhost:3000/cars/65a4ff9db1f323ce66385b4a HTTP/1.1
 
 content-type: application/json
 {
-    "firstName": "Jasper",
-    "lastName": "Kinm",
-    "email": "kim@education.co.za",
-    "favoriteColor": "Yellow",
-    "birthday": "Sep 12 2003"
+    "brandName": "Benz",
+    "ownerEmail": "benz@gmail.com",
+    "model": "2005",
+    "location": "Pretoria",
+    "milage": "3213"
 }
 
 ### delete car
@@ -49,11 +51,11 @@ POST https://cse341-instructor.herokuapp.com/cars HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Tapiwar",
-    "lastName": "sithole",
-    "email": "dbra@education.co.za",
-    "favoriteColor": "Yellow",
-    "birthday": "Feb 19 2002"
+    "brandName": "Nissan",
+    "ownerEmail": "nissan@co.za",
+    "model": "2019",
+    "location": "Cape Town",
+    "milage": "1200"
 }
 
 ### PUT car
@@ -61,11 +63,11 @@ PUT https://cse341-instructor.herokuapp.com/cars/6220bcb39cd507e920c75a0b HTTP/1
 content-type: application/json
 
 {
-    "firstName": "Jasper",
-    "lastName": "Kinm",
-    "email": "kim@education.co.za",
-    "favoriteColor": "Yellow",
-    "birthday": "Sep 12 2003"
+    "brandName": "Benz",
+    "ownerEmail": "benz@gmail.com",
+    "model": "2005",
+    "location": "Pretoria",
+    "milage": "3213"
 }
 
 DELETE https://cse341-instructor.herokuapp.com/cars/65a4ff1eb1f323ce66385b49 HTTP/1.1

@@ -18,16 +18,15 @@ const getSingle  = async(req, res) => {
         }); 
 };
 
-
-const createContact = async (req, res) => {
-    const contact = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        favoriteColor: req.body.favoriteColor,
-        birthday: req.body.birthday
+const createCar = async (req, res) => {
+    const car = {
+        brandName: req.body.brandName,
+        ownerEmail: req.body.ownerEmail,
+        model: req.body.model,
+        location: req.body.location,
+        milage: req.body.milage
     };
-    const response = await mongodb.getDatabase().db().collection('cars').insertOne(contact);
+    const response = await mongodb.getDatabase().db().collection('cars').insertOne(car);
     if (response.acknowledged) {
         res.status(201).json(response); 
     } else {
@@ -35,20 +34,20 @@ const createContact = async (req, res) => {
     }
 };
 
-const updateContact = async (req, res) => {
+const updateCar = async (req, res) => {
     const userId = new ObjectId(req. params.id);
-    const contact = {
-        firstName: req.body.firstName,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        favoriteColor: req.body.favoriteColor,
-        birthday: req.body.birthday
+    const car = {
+        brandName: req.body.brandName,
+        ownerEmail: req.body.ownerEmail,
+        model: req.body.model,
+        location: req.body.location,
+        milage: req.body.milage
     };
     const response = await mongodb
         .getDatabase()
         .db()
         .collection('cars')
-        .replaceOne({ _id: userId}, contact);
+        .replaceOne({ _id: userId}, car);
     console.log(response);
     if (response.modifiedCount > 0) {
         res.status(204).send();
@@ -58,7 +57,7 @@ const updateContact = async (req, res) => {
     }
 
 };
-const deleteContact = async (req, res) => {
+const deleteCar = async (req, res) => {
     const userId = new ObjectId(req. params.id);
     const response = await mongodb.getDatabase().db().collection('cars').deleteOne({ _id: userId});
     console.log(response);
@@ -72,8 +71,8 @@ const deleteContact = async (req, res) => {
 module.exports = {
     getAll,
     getSingle,
-    createContact,
-    updateContact,
-    deleteContact
+    createCar,
+    updateCar,
+    deleteCar
 
 };
