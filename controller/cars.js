@@ -23,6 +23,8 @@ const createCar = async (req, res, next) => {
         brandName: req.body.brandName,
         ownerEmail: req.body.ownerEmail,
         model: req.body.model,
+        name: req.body.name,
+        color:req.body.color,
         location: req.body.location,
         milage: req.body.milage
     };
@@ -40,8 +42,11 @@ const updateCar = async (req, res) => {
         brandName: req.body.brandName,
         ownerEmail: req.body.ownerEmail,
         model: req.body.model,
+        name: req.body.name,
+        color:req.body.color,
         location: req.body.location,
         milage: req.body.milage
+
     };
     const response = await mongodb
         .getDatabase()

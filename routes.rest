@@ -15,11 +15,19 @@ content-type: application/json
     "brandName": "Nissan",
     "ownerEmail": "nissan@co.za",
     "model": "2019",
+    "name": "Tiffiny",
+    "color" : "Red",
     "location": "Cape Town",
     "milage": "1200"
 }
 
-
+    brandName: req.body.brandName,
+        ownerEmail: req.body.ownerEmail,
+        model: req.body.model,
+        name: req.body.name,
+        color:req.body.color,
+        location: req.body.location,
+        milage: req.body.milage
 
 ### put cars
 POST http://localhost:3000/cars/65a4ff9db1f323ce66385b4a HTTP/1.1
@@ -29,6 +37,8 @@ content-type: application/json
     "brandName": "Benz",
     "ownerEmail": "benz@gmail.com",
     "model": "2005",
+    "name": "Josh",
+    "color": "White",
     "location": "Pretoria",
     "milage": "3213"
 }
@@ -54,6 +64,8 @@ content-type: application/json
     "brandName": "Nissan",
     "ownerEmail": "nissan@co.za",
     "model": "2019",
+    "name": "Tiffiny",
+    "color" : "Red",
     "location": "Cape Town",
     "milage": "1200"
 }
@@ -66,6 +78,8 @@ content-type: application/json
     "brandName": "Benz",
     "ownerEmail": "benz@gmail.com",
     "model": "2005",
+    "name": "Josh",
+    "color": "White",
     "location": "Pretoria",
     "milage": "3213"
 }
