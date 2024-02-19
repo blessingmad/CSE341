@@ -1,6 +1,6 @@
 const validator = require('../pathfinders/validate');
 
-const saveBookdetails = (req, res, next) => {
+const carsController = (req, res, next) => {
   const validationRule = {
     brandName: 'required|string',
     ownerEmail: 'required|string',
@@ -24,5 +24,5 @@ const saveBookdetails = (req, res, next) => {
 };
 
 module.exports = {
-  saveBookdetails
+  carsController
 };
