@@ -2,7 +2,7 @@ const express = require('express');
 
 const bodyParser = require('body-parser');
 const mongodb = require('./data/database');
-const bodyParser = require("body-parser");
+
 const passport = require("passport");
 const session = require("express-session");
 const GitHubStrategy = require("passport-github2").Strategy;
@@ -36,17 +36,17 @@ app.use((req, res, next) =>{
     next();
 });
     
-app.use(cors({ methods: ["GET", "POST", "PUT", "DELETE", "UPDATE", "PATCH"] }))
-    .use(cors({ origin: "*" }))
-    .use("/", require("./routes/index.js"));
+app.use(cors({ methods: ['GET', 'POST', 'PUT', 'DELETE', 'UPDATE', 'PATCH'] }))
+    .use(cors({ origin: '*' }))
+    .use('/', require('./routes/index.js'));
     app.use('/', require('./routes/index.js'));
 
     passport.use(
-        new GitHubStrategy
+        new GitHubStrategy,
         {
-            clientID: process.env.GITHUB_CLIENT_ID,
-            clientSecret: process.env.GITHUB_CLIENT_SECRET,
-            callbackURL: process.env.CALLBACK_URL,
+          clientID: process.env.GITHUB_CLIENT_ID,
+          clientSecret: process.env.GITHUB_CLIENT_SECRET,
+          callbackURL: process.env.CALLBACK_URL,
         },
         function (accessToken, refeshToken, profile, done) {
             //User.findOrCreate({githubId: profile.id}, function(err, user) {
