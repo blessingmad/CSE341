@@ -1,18 +1,22 @@
 const express = require('express');
 const router = express.Router();
 
-const carsController = require('../controllers/cars');
-const validation = require('../middleware/validate');
-const {isAuthenticated} = require("../middleware/authenticate");
+const carsController = require('../controller/cars');
 
+const validation = require('../middleware/validate');
+
+const {isAuthenticated} = require("../middleware/authenticate");
+//select
 router.get('/',carsController.getAll);
 
 router.get('/:id',carsController.getSingle);
-router.post('/', isAuthenticated, validation.saveCars, carsController.updateCars);
-router.post('/', carsController.createCar);
+//create
+router.post('/', isAuthenticated, carsController.createCar);
 
-router.put('/:id', isAuthenticated, validation.saveCar, carsController.updateCar);
 
+//update
+router.put('/:id', isAuthenticated, carsController.updateCar);
+//delete
 router.delete('/:id', isAuthenticated, carsController.deleteCar);
 
 module.exports = router;

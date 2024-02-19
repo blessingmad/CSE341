@@ -3,7 +3,8 @@
 GET http://localhost:3000/cars
 
 ### Get user by id
-GET http://localhost:3000/cars/65a4ff1eb1f323ce66385b49
+GET http://localhost:3000/cars/65b283276b4b505eea83ca9c
+
 
 ### create car
 
@@ -21,16 +22,9 @@ content-type: application/json
     "milage": "1200"
 }
 
-    brandName: req.body.brandName,
-        ownerEmail: req.body.ownerEmail,
-        model: req.body.model,
-        name: req.body.name,
-        color:req.body.color,
-        location: req.body.location,
-        milage: req.body.milage
 
 ### put cars
-POST http://localhost:3000/cars/65a4ff9db1f323ce66385b4a HTTP/1.1
+PUT http://localhost:3000/cars/65a4ff9db1f323ce66385b4a HTTP/1.1
 
 content-type: application/json
 {
@@ -71,7 +65,8 @@ content-type: application/json
 }
 
 ### PUT car
-PUT https://cse341-instructor.herokuapp.com/cars/6220bcb39cd507e920c75a0b HTTP/1.1
+PUT https://cse341-instructor.herokuapp.com/cars/65b285416b4b505eea83ca9e
+ HTTP/1.1
 content-type: application/json
 
 {
@@ -84,4 +79,4 @@ content-type: application/json
     "milage": "3213"
 }
 
-DELETE https://cse341-instructor.herokuapp.com/cars/65a4ff1eb1f323ce66385b49 HTTP/1.1
+DELETE https://cse341-instructor.herokuapp.com/cars/65b286f76b4b505eea83ca9 HTTP/1.1
